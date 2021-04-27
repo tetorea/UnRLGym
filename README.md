@@ -5,6 +5,7 @@ under construction!!
 Developed with Unreal Engine 4
 
 Goal : provide a collection of environments to play with reinforcement learning algorithms. (...only robot arm environment for now)
+
 When the project starts, a TCP server is launched so that any external program can connect and :
 - select an environment
 - get the sensor values from the environment
