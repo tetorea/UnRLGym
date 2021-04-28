@@ -14,4 +14,6 @@ Tested with :
 - Visual Studio 2017
 - UE 4.26.1
 
+Rely on the ObjectDeliverer (free) plugin to handle TCP communication : https://www.unrealengine.com/marketplace/en-US/product/objectdeliverer
+
 torea Foissotte, 2021-04-26
