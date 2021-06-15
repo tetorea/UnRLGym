@@ -7,8 +7,8 @@
 #include "GameFramework/Actor.h"
 #include "Components/SceneCaptureComponent2D.h"
 #include "Components/SphereComponent.h"
+#include <array>
 #include "Engine/TextureRenderTarget2D.h"
-
 #include "BasicCameraSensor.generated.h"
 
 
@@ -18,19 +18,29 @@ class UNRLGYM_API ABasicCameraSensor : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ABasicCameraSensor();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable)
+	void GetCameraImage();
+
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Transient, Category = "Sensor")
+	TArray<int> cameraImage;
+
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Transient, Category = "Sensor")
+	int elementSize;
+
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Transient, Category = "Sensor")
+	int elementCount;
 
 
 	USceneCaptureComponent2D *Camera;
 	UTextureRenderTarget2D *RenderTarget;
 	UTexture2D *Texture2D;
+	FTexturePlatformData *Data;
 };
